@@ -11,7 +11,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150706120326) do
+ActiveRecord::Schema.define(version: 20150706121035) do
+
+  create_table "calls", force: :cascade do |t|
+    t.string   "user"
+    t.string   "outgoing"
+    t.string   "incoming"
+    t.string   "mobile"
+    t.string   "landline"
+    t.string   "local"
+    t.string   "regional"
+    t.string   "international"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
+
+  create_table "numbers", force: :cascade do |t|
+    t.integer  "number"
+    t.string   "mobile"
+    t.string   "landline"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "name"
